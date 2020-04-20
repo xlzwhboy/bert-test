@@ -25,23 +25,23 @@ def cosine_similarity(x, y, norm=False):
     return 0.5 * cos + 0.5 if norm else cos  # 归一化到[0, 1]区间内
 
 
-def split_dataset(a,b,c,dataset_dir):
+def split_dataset(a,b,c,dataset,dataset_dir):
     '''按a:b:c拆分数据集为train,dev,test'''
-    df_all = pd.read_csv(dataset_dir + 'alldata.csv', header=None)
+    df_all = pd.read_csv(dataset_dir + dataset, header=None)
     # 拆分出训练集train
     df_train = df_all.sample(frac=a/(a+b+c))
-    # 剩下
-    df_remain = df_all[~df_all.index.isin(df_train.index)]
-    # 拆分出验证集dev
-    df_dev = df_remain.sample(frac=b/(b+c))
-    if(c!=0):
-        # 剩下为测试集test
-        df_test = df_remain[~df_remain.index.isin(df_dev.index)]
-        df_test.to_csv(dataset_dir + 'test.csv', header=None, index=False)
-    # 保存到文件
-    df_train.to_csv(dataset_dir + 'train.csv', header=None, index=False)
-    df_dev.to_csv(dataset_dir + 'dev.csv', header=None, index=False)
+	df_train.to_csv(dataset_dir + 'train.csv', header=None, index=False)
 
+	if b!=0:
+		# 剩下
+		df_remain = df_all[~df_all.index.isin(df_train.index)]
+		# 拆分出验证集dev
+		df_dev = df_remain.sample(frac=b/(b+c))
+		df_dev.to_csv(dataset_dir + 'dev.csv', header=None, index=False)
+		if(c!=0):
+			# 剩下为测试集test
+			df_test = df_remain[~df_remain.index.isin(df_dev.index)]
+			df_test.to_csv(dataset_dir + 'test.csv', header=None, index=False)
 
 
 def load_standard_query(inputfile):

@@ -1,6 +1,6 @@
 from helpers.base_functions import count_pos_neg
 
-train='data/AFQMC/train.csv'
+train='data/004/train.csv'#要统计类别分布的数据集
 
 df=count_pos_neg(train)
 

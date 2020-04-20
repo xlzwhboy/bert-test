@@ -1,0 +1,24 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="11">
+            <item index="0" class="java.lang.String" itemvalue="mkl-fft" />
+            <item index="1" class="java.lang.String" itemvalue="protobuf" />
+            <item index="2" class="java.lang.String" itemvalue="scipy" />
+            <item index="3" class="java.lang.String" itemvalue="wincertstore" />
+            <item index="4" class="java.lang.String" itemvalue="Werkzeug" />
+            <item index="5" class="java.lang.String" itemvalue="astor" />
+            <item index="6" class="java.lang.String" itemvalue="grpcio" />
+            <item index="7" class="java.lang.String" itemvalue="mkl-random" />
+            <item index="8" class="java.lang.String" itemvalue="pyreadline" />
+            <item index="9" class="java.lang.String" itemvalue="Markdown" />
+            <item index="10" class="java.lang.String" itemvalue="mkl-service" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
